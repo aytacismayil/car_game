@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Object</title>
+    <style>
+    body{
+      background-color: wheat;
+    }
+    h1{
+      background-color: red;
+      border: 2px solid blue;
+      text-align: center;
+      color: white;
+    }
+    strong{
+      background-color: yellow;
+      border: 1px solid blue;
+    }
+    
+    </style>
+  </head>
+  <body>
+
+    <h1>Car Adventures!</h1>
+    <h2>Type <strong>"h"</strong> to honk, <strong>"d"</strong> to drive to work, <strong>"w"</strong> to drive around the world, or <strong>"t"</strong> to get a tuneup.</h2>
+    <h2>See console for car stats.</h2>
+    <script>
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+      function consolaCix() {
+        console.log("Make: " + car.make);
+        console.log("Model: " + car.model);
+        console.log("Color:" + car.color);
+        console.log("Mileage: " + car.mileage);
+        console.log("Is Working: " + car.isWorking);
+        console.log("------------------------------");
+      }
+document.onkeyup = function(event){
+ var game = event.key;
+
+ if(game ==="h"){
+   car.honk();
+   consolaCix();
+ }
+ else if(game==="d"){
+   car.driveToWork();
+   consolaCix();
+ }
+ else if(game==="w"){
+   car.driveAroundWorld();
+   consolaCix();
+ }
+ else if(game==="t"){
+   car.getTuneUp();
+   consolaCix();
+ }
+
+};
+    </script>
+    
+  </body>
+</html>
